@@ -16,7 +16,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // connect to mongo db
-mongoose.connect('mongodb://depthPerception:C@s1aw@y@ds013946.mlab.com:13946/emailsdepthperception');
+//mongoose.connect('mongodb://localhost:27017/subscribers');
+mongoose.connect('mongodb://emails:Cas1away@ds013946.mlab.com:13946/emailsdepthperception');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
