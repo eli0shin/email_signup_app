@@ -1,3 +1,4 @@
+var compression = require('compression');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -11,12 +12,14 @@ var api = require('./routes/api');
 
 var app = express();
 
+//enable gzip compression
+app.use(compression());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // connect to mongo db
-//mongoose.connect('mongodb://localhost:27017/subscribers');
 mongoose.connect('mongodb://emails:Cas1away@ds013946.mlab.com:13946/emailsdepthperception');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
