@@ -1,4 +1,4 @@
-var compression = require('compression');
+//var compression = require('compression');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,7 +13,7 @@ var api = require('./routes/api');
 var app = express();
 
 //enable gzip compression
-app.use(compression());
+//app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
