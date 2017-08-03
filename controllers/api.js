@@ -21,39 +21,6 @@ module.exports = {
             }
             console.log(subscribers);
             return res.csv(subscribers, ['email'], ['Email Address'], '');
-            /*var newJSON = {};
-            var emails = subscribers.map(function(){
-
-            });*/
-            /*var fields = ['email'];
-            var csv = json2csv({ data: subscribers, fields: fields, fieldNames: ['Email Address'], quotes: '' });
-
-            console.log(csv);*/
-            //var path="../public/csvFile" + Date.now() + ".csv";
-            /*console.log(path);
-            var csvFile = fs.writeFile(path, csv, function(err,data) {
-                if (err) {
-                    console.log( err +data);
-                    throw err;
-                }
-            });*/
-            //var csvFile = fs.createWriteStream(path);
-
-            /*tmp.file(function _tempFileCreated(err, path, fd, cleanupCallback) {
-              if (err) throw err;
-
-              console.log("File: ", path);
-              console.log("Filedescriptor: ", fd);
-
-                fs.wr
-
-              // If we don't need the file anymore we could manually call the cleanupCallback
-              // But that is not necessary if we didn't pass the keep option because the library
-              // will clean after itself.
-              cleanupCallback();
-            });
-            return res.sendFile(path, { root: __dirname });*/
-            //return res.send(csv);
     });
 },
 
@@ -82,7 +49,8 @@ module.exports = {
      * api.create()
      */
     create: function (req, res) {
-        var subscriber = new api({			email : req.body.email
+        var subscriber = new api({
+			email : req.body.email
         });
         console.log(subscriber.email);
         console.log(req.body);
