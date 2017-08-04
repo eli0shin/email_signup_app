@@ -7,6 +7,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+
+
 var index = require('./routes/index');
 var api = require('./routes/api');
 
@@ -26,8 +28,8 @@ db.once('open', function() {
     console.log('db connected');
 });
 
-
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//uncomment after adding favicon
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

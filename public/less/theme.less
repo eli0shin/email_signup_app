@@ -39,15 +39,24 @@ body {
 
     margin: 10vh auto;
     background: rgba(225,225,225,0.7);
+    @media @phone {
+        height: 100vh;
+        width: 100vw;
+        background-color: @background;
+    }
 }
 
 .header-logo {
     width: 100%;
     text-align:center;
-    margin-top: 50px;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
 
     &>img {
         height: 150px;
+    }
+    &>.header-text {
+        font-size: 64px;
     }
 }
 
@@ -61,15 +70,27 @@ body {
             border-bottom: 1px solid black;
             height: 35px;
             width: 500px;
+            max-width: 70vw;
             font-size: 24px;
             text-align: center;
+            &:focus {
+                border-color: @submit-background;
+                border-bottom-width: 3px;
+                transition: border-bottom-width 90ms ease-out;
+            }
+            @media @phone {
+                font-size: 16px;
+                &::-webkit-input-placeholder{
+                    color: #fff;
+                }
+            }
         }
         button[type=submit]{
             margin-top: 45px;
             margin-bottom: 45px;
             height: 45px;
             width: 150px;
-            background: #4CAF50;
+            background: @submit-background;
             font-size: 20px;
             color: white;
             cursor: pointer;

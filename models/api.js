@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
-var apiSchema = new Schema({	email : String});
+var EMAIL = new Schema({
+	email : String
+});
 
-module.exports = mongoose.model('email', apiSchema);
+module.exports = mongoose.model('email', EMAIL);

@@ -3,7 +3,6 @@ $(function() {
     $('#email-form').on('submit', function(event) {
         event.preventDefault();
         var $email = 'email=' + encodeURIComponent($('#email').val());
-        console.log($email);
         $.ajax({
             type: 'POST',
             url: 'api/',
@@ -20,7 +19,7 @@ $(function() {
                 }, 3000);
             },
             success: function(data) {
-
+                
                 $('#thank-you').toggle();
                 setTimeout(function() {
                     $('#thank-you').toggle();

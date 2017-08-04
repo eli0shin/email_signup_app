@@ -4,7 +4,7 @@ var csv = require('./csv-express.js');
 /**
  * api.js
  *
- * @description :: Server-side logic for managing subscriber.
+ * @description :: Server-side logic for managing subscribers.
  */
 module.exports = {
 
@@ -52,9 +52,6 @@ module.exports = {
         var subscriber = new api({
 			email : req.body.email
         });
-        console.log(subscriber.email);
-        console.log(req.body);
-        console.log(req.body.email);
         subscriber.save(function (err, subscriber) {
             if (err) {
                 console.log(err);
@@ -63,7 +60,7 @@ module.exports = {
                     error: err
                 });
             }
-            return res.status(201).json(subscriber);
+            return res.status(200).json(subscriber);
         });
     },
 
